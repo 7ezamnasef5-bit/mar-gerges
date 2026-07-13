@@ -64,5 +64,7 @@ app.delete('/api/makhdoumin', (req, res) => {
     res.status(404).json({ success: false, message: "المخدوم غير موجود" });
 });
 
-
+app.listen(PORT, () => {
+    console.log(`Server is running successfully on port ${PORT}`);
+});
 
