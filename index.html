@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام إدارة كنيسة مارجرجس</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <button id="downloadBtn" class="download-card" style="display: none;">
+            <span>تنزيل تطبيق اجتماع اعدادي كنيسة مارجرجس على جهازك 📱</span>
+        </button>
+
+        <section id="loginSection" class="main-card animate-fade">
+            <div class="avatar-header">⛪</div>
+            <h2>مرحباً بك في موقع اجتماع كنيسة مارجرجس اعدادي</h2>
+            <p class="subtitle">كنيسة الشهيد العظيم مارجرجس بالاسماعيليه</p>
+            
+            <div class="input-group">
+                <label for="loginInput">ادخل كود الادمين أو اسمك الثلاثي</label>
+                <input type="text" id="loginInput" placeholder="أكتب هنا اسمك الثلاثي أو كود الادمين">
+            </div>
+            <button onclick="handleLogin()" class="btn-primary">دخول للنظام</button>
+        </section>
+
+        <section id="adminSection" class="main-card animate-fade" style="display: none;">
+            <div class="header-row">
+                <h2>لوحة تحكم الخادم 🛠️</h2>
+                <button onclick="logout()" class="btn-danger-sm">خروج</button>
+            </div>
+            
+            <hr>
+
+            <h3>➕ إضافة مخدوم جديد</h3>
+            <form id="makhdoumForm" onsubmit="addMakhdoum(event)" class="grid-form">
+                <input type="text" id="name" placeholder="الاسم الثلاثي للمخدوم" required>
+                <input type="text" id="phone" placeholder="رقم التليفون" required>
+                <input type="text" id="address" placeholder="العنوان بالتفصيل" required>
+                <input type="number" id="age" placeholder="السن" required>
+                <input type="number" id="grade" placeholder="الدرجة / التقييم" required>
+                <button type="submit" class="btn-success">حفظ المخدوم في القاعدة</button>
+            </form>
+
+            <hr>
+
+            <h3>📊 قائمة المخدومين والدرجات</h3>
+            <div class="table-container">
+                <table id="makhdoumTable">
+                    <thead>
+                        <tr>
+                            <th>الاسم</th>
+                            <th>التليفون</th>
+                            <th>العنوان</th>
+                            <th>السن</th>
+                            <th>الدرجة</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="userSection" class="main-card animate-fade" style="display: none;">
+            <div class="header-row">
+                <h2>بياناتك الشخصية 📝</h2>
+                <button onclick="logout()" class="btn-danger-sm">خروج</button>
+            </div>
+            <hr>
+            <div id="userData" class="user-profile-grid">
+                </div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
