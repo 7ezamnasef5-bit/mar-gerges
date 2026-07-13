@@ -68,3 +68,4 @@ app.listen(PORT, () => {
     console.log(`Server is running successfully on port ${PORT}`);
 });
 
+module.exports = app;
