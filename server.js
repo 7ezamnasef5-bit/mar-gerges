@@ -64,8 +64,5 @@ app.delete('/api/makhdoumin', (req, res) => {
     res.status(404).json({ success: false, message: "المخدوم غير موجود" });
 });
 
-// تشغيل السيرفر على البورت الذي تحدده الاستضافة تلقائياً أو 3000 كاحتياطي
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`السيرفر شغال على بورت: ${PORT}`);
-});
+
